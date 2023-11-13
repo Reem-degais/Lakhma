@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lakhma</title>
+    <link rel="icon" type="image/x-icon" href="public/images/favicon.ico">
+    <link rel="stylesheet" href="css/last.css">
+        
+  </head>
+    
+  <body>
+      
+    <div class="page1" id="page1">
+      <header>
+          <div class="container flex-row">
+            <div class="language-switch flex-row">
+                <button  onclick = "changeLanguage('en')"> English </button>
+                <button  onclick = "changeLanguage('ar')"> العربية </button>
+            </div>
+            <div class="instruction">
+                <button id="1" onclick="openPopup()">how to play</button>
+            </div>
+          </div>  
+      </header>
+        
+      <section class="container flex-center flex-column" >
+        <img src="images/logo.png" alt="logo" width="500" height="300" class="imge">
+        <div class="gamename">
+                <span style="color:#FF0000">L</span>
+                <span style="color:#4ab84a">A</span>
+                <span style="color:#66edff">K</span>
+                <span style="color:rgba(236, 105, 17, 0.815)">H</span>
+                <span style="color:#5900ff">M</span>
+                <span style="color:#ff009f;">A</span>
+        </div>
+        <button id="5" onclick="openPopup()">play</button>
+        <div id="popup" class="popup">
+          <h2 style="text-align: center; margin-bottom: 20px;">Enter your name</h2>
+          <input type="text" id="name"  autocomplete="off" style="height: 45px; font-size: 20px; font-weight: 400;  margin-bottom: 20px;">
+          <button id="7" style="margin-left: 35%;">Start</button>
+          <img src="images\load.gif" id="loading" style="width: 50px; height: 50px; margin-left: 40%;">
+        </div>
+      </section>
+    </div>
+
+    
+    
+    <div id="page2">
+
+      <section class=" right-side" style="float: right;">
+        <div class="timer">
+          <p id="timer">00:4</p>
+        </div>
+        <div class="info flex-column">
+          <p id="user">you</p>
+          <p id="oppcont">VS </p>
+          <p id="opp">op</p>
+        </div>
+        <div class="chatting">
+          <ul id="messages"></ul>
+          <form id="chatt" action="">
+            <input type="text" class="chattext" id="input-mas">
+            <button class="send">send</button>
+        </form>
+        </div>
+      </section>
+    
+
+      <section class=" game-board flex-center flex-column" >
+        
+        <div class="oneone flex-row flex-center">
+          <div class="card one flex-center" id="o1" >
+              <img src="images/logo.png" class="pic1">
+          </div>
+          <div class="card one flex-center" id="o2" >
+              <img src="images/logo.png" class="pic1">
+          </div>
+          <div class="card one flex-center" id="o3" >
+              <img src="images/logo.png" class="pic1">
+          </div>
+          <div class="card one flex-center" id="o4" >
+              <img src="images/logo.png" class="pic1">
+          </div>
+          <div class="card one flex-center" id="o5">
+              <img src="images/logo.png" class="pic1">
+          </div>
+        </div>
+        <p id="first"></p>
+        <div id="random-card" class="random-card flex-center"></div>
+
+        <div class="choices">
+          <button class="choice" id="choice1" ></button>
+          <button class="choice" id="choice2" ></button>
+           <button class="choice" id="choice3" ></button>
+        </div>
+        <p id="second"></p>
+        <div class="threethree flex-row flex-center ">
+          <div class="card three flex-center" id="th1" >
+              <img src="images/logo.png" class="pic3"> 
+          </div>
+          <div class="card three flex-center" id="th2" >
+              <img src="images/logo.png" class="pic3">
+          </div>
+          <div class="card three flex-center" id="th3" >
+              <img src="images/logo.png" class="pic3">
+          </div>
+          <div class="card three flex-center" id="th4" >
+              <img src="images/logo.png" class="pic3">
+          </div>
+          <div class="card three flex-center" id="th5" >
+              <img src="images/logo.png" class="pic3">
+          </div>
+        </section>
+        
+      </div>
+
+      
+        
+            
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="scripts/page2.js"></script>
+
+</html>
