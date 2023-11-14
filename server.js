@@ -17,18 +17,21 @@ app.get('/', (req, res) => {
 })
 
 app.get('/page1.js', function (req, res) {
-	res.sendFile(join(__dirname ,'/public/scripts/page2.js'));
+	res.sendFile(join(__dirname ,'/public/scripts/client.js'));
 });
 
+/* array to store playerss information*/
 let arr=[]
 let playingArray=[]
-let key =""
 
+/*start socket io connection*/
 io.on('connection', (socket) => {
+    /*chatting event*/
     socket.on('chat message', (msg) => {
       io.emit('chat message', msg);
     });
-
+    
+    /*find event to start game and get players information*/
     socket.on("find",(e)=>{
 
         if(e.name!=null){
@@ -66,7 +69,8 @@ io.on('connection', (socket) => {
 
         }
     })
-
+    
+    /*playing event to manage the game */
     socket.on("playing",(e)=>{
         
         if(e.value=="card one flex-center"){
