@@ -39,12 +39,12 @@ io.on('connection', (socket) => {
                 let p1obj={
                     p1name:arr[0],
                     p1value:"card one",
-                    p1move:""
+                    p1card:""
                 }
                 let p2obj={
                     p2name:arr[1],
                     p2value:"card three",
-                    p2move:""
+                    p2card:""
                     
                 }
 
@@ -52,9 +52,9 @@ io.on('connection', (socket) => {
                     p1:p1obj,
                     p2:p2obj,
                     sum:1,
-                    co:"",
-                    ba:"",
-                    te:""
+                    coLor:"",
+                    back:"",
+                    intext:""
                 }
                 playingArray.push(obj)
 
@@ -72,26 +72,23 @@ io.on('connection', (socket) => {
         if(e.value=="card one flex-center"){
             let objToChange=playingArray.find(obj=>obj.p1.p1name==e.name)
 
-            objToChange.p1.p1move=e.id
-            objToChange.p2.p2move=''
+            objToChange.p1.p1card=e.id
+            objToChange.p2.p2card=''
             objToChange.sum++
-            objToChange.co=e.co
-            objToChange.ba=e.ba
-            objToChange.te=e.te
-            console.log(e.te)
-            console.log(e.ba)
-            console.log(e.co)
+            objToChange.coLor=e.coLor
+            objToChange.back=e.back
+            objToChange.intext=e.intext
             
         }
         else if (e.value=="card three flex-center"){
             let objToChange=playingArray.find(obj=>obj.p2.p2name==e.name)
             
-            objToChange.p2.p2move=e.id
-            objToChange.p1.p1move=''
+            objToChange.p2.p2card=e.id
+            objToChange.p1.p1card=''
             objToChange.sum++
-            objToChange.co=e.co
-            objToChange.ba=e.ba
-            objToChange.te=e.te
+            objToChange.coLor=e.coLor
+            objToChange.back=e.back
+            objToChange.intext=e.intext
             }
         
         
